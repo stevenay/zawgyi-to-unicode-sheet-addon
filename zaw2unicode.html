@@ -1,0 +1,58 @@
+<!-- Use this CSS stylesheet to ensure that add-ons styling 
+     matches the default Google Docs styles -->
+     <link href="https://ssl.gstatic.com/docs/script/css/add-ons.css"
+     rel="stylesheet"> 
+
+<div class="sidebar">
+    
+    <div class="block form-group">
+        <label>Font Detection Strict Mode</label>
+        <select id="detection" style="width:80%">
+             <option value="yes" selected>Yes</option>
+             <option value="no">No</option>
+        </select>
+    </div>
+    
+    <div class="block form-group">
+        <label>From</label>
+        <select id="from" style="width:80%">
+             <option value="zaw" selected>Zawgyi</option>
+             <option value="uni">Unicode</option>
+        </select>
+    </div>
+    
+    <div class="block form-group">
+        <label>To</label>
+        <select id="to" style="width:80%">
+             <option value="zaw">Zawgyi</option>
+             <option value="uni" selected>Unicode</option>
+        </select>
+    </div>
+    
+    <div class="block form-group">
+        <button class="blue" id="convert">Convert</button>
+    </div>
+    
+    <!-- The container for the Google Maps static image -->
+    <div id='maps'></div>
+
+</div>
+
+<!-- Load the jQuery library from the Google CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+
+<script>
+ // Attach click handlers after the Sidebar has loaded in Google Docs
+ $(function() {
+
+   // Use Static Maps to generate an image of the address entered by the user 
+   $('#convert').click(function() {
+     var detection = $('#detection').val() === "yes";
+     var from = $('#from').val();
+     var to = $('#to').val()
+     google.script.run.convert(from, to, detection);
+   });
+   
+ });
+</script>
