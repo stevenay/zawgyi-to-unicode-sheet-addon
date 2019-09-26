@@ -1,5 +1,7 @@
 # Unicode to My Sheet - Google Sheet addon
-**Google Spreadsheet Add-on** that can convert the sheet cell content from Zawgyi to Unicode and vice versa.  
+**Google Spreadsheet Add-on** that can convert the sheet cell content from Zawgyi to Unicode and vice versa.<br/>
+
+![Alt text](./screenshot.png "Unicode to My Sheet Addon")
   
 ## Features  
  - Font detection strict mode.
